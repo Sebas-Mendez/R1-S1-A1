@@ -79,21 +79,30 @@ public class Veterinaria {
 
     //Metodos propios
 
-    public void cumplirAnios(int anos){
-        System.out.println("¿Cuantos años cumple?");
-        System.out.println("Años cumplidos: " + anos);
+    public int cumplirAnios(int anos){
+        this.edad = anos + edad;
+        return edad;
     }
 
-    public void engordar(){
-
+    public double engordar(double KgWin){
+        this.peso = peso + KgWin;
+        return this.peso;
     }
 
-    public void adelgazar(){
-
+    public double adelgazar(double KgLose){
+        this.peso = peso - KgLose;
+        return this.peso;
     }
 
-    public void enfermar(){
+    public boolean enfermar(int salud){
+        if (salud == 1){
+            saludable = true;
 
+        } else if (salud == 2){
+            saludable = false;
+
+        }
+        return saludable;
     }
 
     public void mostrarFicha(){
