@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -7,26 +9,45 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         int opcion;
 
-        Veterinaria A1 = new Veterinaria("Lara" , "Cocker Spaniel" , 8 , 12.2 , true);
-        A1.mostrarFicha();
+        //Veterinaria A1 = new Veterinaria("Lara" , "Cocker Spaniel" , 8 , 12.2 , true);
+       // A1.mostrarFicha();
 
-
+        List<Veterinaria> lstLista =new ArrayList<>();
 
         do {
 
             System.out.println("Elija la opcion que necesite");
-            System.out.println("1. Edad");
-            System.out.println("2. Peso");
-            System.out.println("3. estado de salud");
-            System.out.println("4. Salir");
-             opcion=teclado.nextInt()  ;
+            System.out.println("1 Crear ficha");
+            System.out.println("2. Edad");
+            System.out.println("3. Peso");
+            System.out.println("4. estado de salud");
+            System.out.println("5. Mostrar Ficha");
+            System.out.println("6. Salir");
+            opcion=teclado.nextInt()  ;
             switch (opcion){
                 case 1:
+                    System.out.println("Sistema de creacion de ficha");
+                    System.out.println("Ingrese el nombre de la mascota");
+                    String name = teclado.next();
+                    System.out.println("Ingrese la especie");
+                    String specie = teclado.next();
+                    System.out.println("Ingrese la edad de la mascota");
+                    int age = teclado.nextInt();
+                    System.out.println("Ingrese el peso de la mascota");
+                    double kg = teclado.nextDouble();
+                    System.out.println("Estado de salud de la mascota");
+                    boolean salud = teclado.nextBoolean();
+                    Veterinaria A1 = new Veterinaria(name, specie, age, kg, salud);
+                    lstLista.add(A1);
+
+
+
+               /* case 2:
                     System.out.println("¿Cuantos años cumple?");
                     System.out.println(A1.cumplirAnios(teclado.nextInt()));
                     A1.mostrarFicha();
                     break;
-                case 2:
+                case 3:
                     System.out.println("1. Engordar");
                     System.out.println("2. Adelgazar");
                     switch (teclado.nextInt()) {
@@ -43,16 +64,21 @@ public class Main {
                             break;
 
                     }
-                case 3:
+                case 4:
                     System.out.println("Ingrese el nuevo estado de salud de la mascota");
                     System.out.println("(1) saludable o (2) enfermo");
                     System.out.println(A1.enfermar(teclado.nextInt()));
                     A1.mostrarFicha();
                     break;
+               */ case 5:
+                    for (Veterinaria pet1: lstLista){
+                        System.out.println(pet1);
+                    }
+                    break;
                 default:
                     System.out.println("Opicion no reconocida");
             }
-        } while (opcion != 3);
+        } while (opcion != 5);
     }
 
 
