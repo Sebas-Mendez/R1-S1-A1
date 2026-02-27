@@ -9,8 +9,8 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         int opcion;
 
-        //Veterinaria A1 = new Veterinaria("Lara" , "Cocker Spaniel" , 8 , 12.2 , true);
-       // A1.mostrarFicha();
+        Veterinaria A1 = new Veterinaria("Lara" , "Cocker Spaniel" , 8 , 12.2 , true);
+        A1.mostrarFicha();
 
         List<Veterinaria> lstLista =new ArrayList<>();
 
@@ -37,12 +37,12 @@ public class Main {
                     double kg = teclado.nextDouble();
                     System.out.println("Estado de salud de la mascota");
                     boolean salud = teclado.nextBoolean();
-                    Veterinaria A1 = new Veterinaria(name, specie, age, kg, salud);
-                    lstLista.add(A1);
+                    Veterinaria A2 = new Veterinaria(name, specie, age, kg, salud);
+                    lstLista.add(A2);
 
 
 
-               /* case 2:
+                case 2:
                     System.out.println("¿Cuantos años cumple?");
                     System.out.println(A1.cumplirAnios(teclado.nextInt()));
                     A1.mostrarFicha();
@@ -70,7 +70,7 @@ public class Main {
                     System.out.println(A1.enfermar(teclado.nextInt()));
                     A1.mostrarFicha();
                     break;
-               */ case 5:
+                case 5:
                     for (Veterinaria pet1: lstLista){
                         System.out.println(pet1);
                     }
